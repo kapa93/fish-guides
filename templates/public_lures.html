@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<a class="button button2" href="{{ url_for('fishList') }}">Go Back</a>
+
+<h2 id="cap">{{fish.name}}</h2>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+{% for message in messages %}
+	<li id="flash"> {{ message }} </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<a class="btn btn2" href="{{ url_for('newFishLure', fish_id = fish.id )}}">Create Lure</a>
+</br>
+<div id="menu">
+{% for i in items %}
+
+<div>
+
+<p>{{i.name}}</p>
+
+<p>{{i.description}}</p>
+
+<p> {{i.price}} </p>
+
+
+<a class="button button2" href="{{url_for('editFishLure', fish_id = fish.id, lure_id = i.id) }}">Edit</a>
+
+<a class="button button3" href="{{url_for('deleteFishLure', fish_id = fish.id, lure_id = i.id) }}">Delete</a>
+<hr>
+</div>
+
+
+{% endfor %}
+</div></br></br></br>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 id="cap"> New Fish </h2>
+
+<div id="menu">
+
+<form action="{{url_for('newFish')}}" method = 'POST'>
+<p id="cap">Name:</p>
+<input type='text' size='30' name='name'>
+</br></br>
+<input class="btn btn2" type='submit' value='Create'>
+<a class="btn btn3" href="{{ url_for('userProfile') }}">Cancel</a>
+</form>
+</div>
+
+{% endblock %}

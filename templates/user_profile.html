@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="list">
+<a class="btn btn3" href="{{url_for('disconnect') }}">Logout </a>
+</div>
+<h2 id="cap">Profile</h2>
+<hr id="underline">
+<div id="menu">
+	<figure class="creator">
+	<img src="{{ creator.picture}}">
+
+	<div id="list2">
+	<h2>{{ creator.name }}</h2>
+	<div id="same">
+	<a class="btn btn4" href="{{url_for('fishList')}}">View All Fish</a>
+	<a class="btn btn2" href="{{url_for('newFish')}}">Add a Fish</a>
+	</div>
+	</div>
+	</figure>
+</div>
+</br>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+{% for message in messages %}
+	<li id="flash">{{ message }} </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<div id="menu">
+{% for r in fish %}
+
+<p id="names">
+<a href= "{{url_for('fishProfile', fish_id = r.id)}}">{{r.name}}</a>
+</p>
+<a class="btn btn4" href="{{url_for('fishProfile', fish_id = r.id)}}">View Lures</a>
+<a class="btn btn2" href="{{url_for('editFishName', fish_id = r.id) }}">Edit </a>
+
+<a class="btn btn3" href="{{url_for('deleteFish', fish_id = r.id) }}"> Delete</a>
+{% endfor %}
+</div>
+</br>
+
+</br></br>
+{% endblock %}

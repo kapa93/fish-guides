@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+{% for message in messages %}
+	<li id="flash">{{ message }} </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<div id="cap">
+<a class="btn btn3" href="{{url_for('showLogin')}}">Login</a>
+<h5 id="same">to add your own fish and lures!</h5>
+</div>
+
+<h2 id="cap">Types of Fish</h2>
+<hr id="underline">
+
+{% for r in fish %}
+
+<div id="menu">
+
+<p id="names">
+<a href= "{{url_for('fishProfile', fish_id = r.id)}}">{{r.name}}</a>
+</p>
+<hr id="underline">
+<a class="btn btn4" href="{{url_for('fishProfile', fish_id = r.id) }}">View Lures </a>
+<a class="btn btn2" href="{{url_for('newFishLure', fish_id = r.id) }}">Add Lure </a>
+
+</div>
+</br>
+
+{% endfor %}
+</br></br>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 id="cap"> Edit Menu Item </h2>
+
+<div id="menu">
+<form action="{{url_for('editFishLure', fish_id=fish_id, lure_id=item.id)}}" method = 'POST'>
+
+<p id="label">Name:</p>
+<input id="field" type='text' size='30' name='name' value='{{item.name}}'>
+<p id="label">Description:</p>
+<input id="field" type='text' size='30' name='description' value='{{item.description}}'>
+<p id="label">Price:</p>
+<input id="field" type='text' size='30' name='price' value='{{item.price}}'>
+
+</br>
+<input class="btn btn2" type='submit' value='Save'>
+<a class="btn btn3" href= "{{url_for('fishProfile', fish_id=fish_id)}}">Cancel</a>
+</form>
+
+</div>
+{% endblock %}

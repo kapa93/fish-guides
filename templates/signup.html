@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 id="cap"> Sign-up! </h2>
+
+<div id="menu">
+<form action="{{url_for('createUser')}}" method = 'POST'>
+
+<p id="label">Name:</p>
+<input type='text' size='30' name='username'>
+</br>
+<p id="label">Email:</p>
+<input type='text' size='30' name='email'>
+</br>
+<p id="label">Password:</p>
+<input type='text' size='30' name='password'>
+</br></br>
+<input class="btn btn2" type='submit' value='Create'>
+<a class="btn btn3" href= "{{url_for('fishList')}}">Cancel</a>
+
+</form>
+</div>
+
+{% endblock %}
