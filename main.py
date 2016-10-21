@@ -305,4 +305,4 @@ def deleteFishLure(fish_id, lure_id):
 if __name__ == '__main__':
 	app.secret_key = 'so_secret_key'
 	app.debug = False
-	app.run(host='0.0.0.0', port=13103)
+	app.run(host='0.0.0.0', port=33507)
