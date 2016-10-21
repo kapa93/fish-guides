@@ -1,1 +1,1 @@
-web: python dealscraper/main.py:app --log-file -
+web: python dealscraper/main.py --log-file -
