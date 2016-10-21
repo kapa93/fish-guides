@@ -1,0 +1,7 @@
+{
+  "name": "Fish Guides",
+  "description": "A Flask Python app, deployed on Heroku",
+  "repository": "https://github.com/kapa93/fish-guides",
+  "keywords": ["python", "flask" ],
+  "addons": [ "heroku-postgresql" ]
+}
