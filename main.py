@@ -177,7 +177,7 @@ def userProfile():
     else:
 		return render_template('user_profile.html', fish = fish, creator = creator)
 
-@app.route('/fish/')
+@app.route('/')
 def fishList():
     """
     List all existing fish
