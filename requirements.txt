@@ -5,4 +5,5 @@ Werkzeug>=0.9.4
 itsdangerous>=0.23
 wsgiref>=0.1.2
 sqlalchemy>=1.0.13
-oauth2client==3.0.0
+oauth2client>=3.0.0
+requests>=2.10.0
