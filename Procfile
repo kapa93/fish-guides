@@ -1,2 +1,1 @@
-
-web: gunicorn --log-file -
+web: python dealscraper/main.py
